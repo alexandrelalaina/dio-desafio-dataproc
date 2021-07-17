@@ -1,7 +1,7 @@
 import sys
 from pyspark import SparkContext, SparkConf
 if __name__ == "__main__":
-    bucket = "gs://play-desafio_dataproc"
+    bucket = "gs://play-desafio-dataproc"
     with open(bucket+"/resultado/part-00000.txt", encoding="utf8") as file:
         data = file.read().split('\n')
         data = data[:10]
