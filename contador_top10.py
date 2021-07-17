@@ -1,12 +1,13 @@
 import sys
 from pyspark import SparkContext, SparkConf
 if __name__ == "__main__":
-    with open("resultado/part-00000.txt", encoding="utf8") as file:
+    bucket = "gs://play-desafio_dataproc"
+    with open(bucket+"/resultado/part-00000.txt", encoding="utf8") as file:
         data = file.read().split('\n')
         data = data[:10]
         top10 = ""
         top10 = '\n'.join(data)
         print(top10)
 
-    with open('resultado.txt', 'w') as newFile:
+    with open(bucket+"/resultado/resultado.txt", 'w') as newFile:
         newFile.write(top10)
